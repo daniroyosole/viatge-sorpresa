@@ -50,6 +50,8 @@ const UserDropdown: React.FC<UserDropdownProps> = ({
             name: name as string,
             completed: completedUsers.includes(name as string)
           }));
+          // Sort users alphabetically by name
+          usersArray.sort((a, b) => a.name.localeCompare(b.name));
           setUsers(usersArray);
         } else {
           setUsers([]);
