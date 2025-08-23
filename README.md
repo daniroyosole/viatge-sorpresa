@@ -1,4 +1,4 @@
-# 🎉 Viatge Sorpresa - Surprise Trip Planner
+# 🎉 Viatge Sorpresa
 
 A festive, Mediterranean-themed questionnaire app for organizing surprise trips! Users can select their name, choose locations on interactive maps, and leave notes for trip planning.
 
