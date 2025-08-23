@@ -1,0 +1,16 @@
+/* Step Actions */
+.step-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .step-actions {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
