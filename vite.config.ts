@@ -11,8 +11,22 @@ export default defineConfig({
     global: 'globalThis'
   },
   build: {
+    target: 'es2015',
     commonjsOptions: {
       include: [/node_modules/]
+    },
+    rollupOptions: {
+      external: [],
+      output: {
+        manualChunks: {
+          leaflet: ['leaflet', 'react-leaflet']
+        }
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      'leaflet': 'leaflet/dist/leaflet.js'
     }
   }
 })
