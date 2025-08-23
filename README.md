@@ -1,69 +1,150 @@
-# React + TypeScript + Vite
+# 🎉 Viatge Sorpresa - Surprise Trip Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A festive, Mediterranean-themed questionnaire app for organizing surprise trips! Users can select their name, choose locations on interactive maps, and leave notes for trip planning.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **🎯 4-Step Questionnaire Flow**
+  - Name selection from Firebase database
+  - Interactive map location selection (2 steps)
+  - Notes and comments input
+- **🗺️ Interactive Maps**
+  - Clickable Leaflet maps with location pins
+  - Reverse geocoding for city/country names
+  - Default Barcelona location
+- **🎨 Beautiful UI**
+  - Mediterranean, festive design theme
+  - Mobile-first responsive layout
+  - Smooth animations and transitions
+- **🔥 Firebase Integration**
+  - Real-time database for user management
+  - Automatic response storage
+  - Prevents duplicate submissions
+- **📱 Mobile Optimized**
+  - No-scroll design
+  - Touch-friendly interface
+  - Responsive across all devices
 
-## Expanding the ESLint configuration
+## 🚀 Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
+```bash
+# Clone the repository
+git clone <repository-url>
+cd viatge-sorpresa
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+# Install dependencies
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Build for Production
+```bash
+npm run build
 ```
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: CSS Modules
+- **Maps**: Leaflet + React-Leaflet
+- **Database**: Firebase Realtime Database
+- **Routing**: React Router DOM
+- **State Management**: React Context API
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── contexts/           # React Context providers
+├── pages/              # Main application pages
+├── services/           # Firebase and API services
+├── assets/             # Static assets
+└── App.tsx            # Main application component
+```
+
+## 🎯 Usage
+
+1. **User Selection**: Choose your name from the dropdown
+2. **First Location**: Click on the map to select where you think the trip will be
+3. **Second Location**: Click on the map to select your dream destination
+4. **Notes**: Add any additional comments or preferences
+5. **Submit**: Complete the questionnaire and get your countdown!
+
+## 🔧 Configuration
+
+### Firebase Setup
+Update `src/firebase.ts` with your Firebase configuration:
+```typescript
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  // ... other config
+};
+```
+
+### Database Structure
+The app expects the following Firebase structure:
+```
+/users
+  - 0: "User Name 1"
+  - 1: "User Name 2"
+  - ...
+
+/respostes
+  - [auto-generated-id]
+    - name: "User Name"
+    - lat_1: 41.3851
+    - lon_1: 2.1734
+    - lat_2: 48.8566
+    - lon_2: 2.3522
+    - notes: "User notes"
+    - timestamp: 1703123456789
+```
+
+## 🎨 Design Theme
+
+- **Colors**: Mediterranean blues, warm oranges, and golden accents
+- **Typography**: Fredoka One for titles, Poppins for body text
+- **Style**: Festive, mysterious, and playful
+- **Animations**: Smooth transitions and hover effects
+
+## 📱 Mobile Features
+
+- **No-scroll design**: Everything fits in viewport
+- **Touch-optimized**: Large touch targets
+- **Responsive maps**: Full-screen map interaction
+- **Fast loading**: Optimized for mobile networks
+
+## 🚀 Deployment
+
+The app is ready for deployment on:
+- Vercel
+- Netlify
+- Firebase Hosting
+- Any static hosting service
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+**Made with ❤️ for surprise trip planning! 🗺️✨**
