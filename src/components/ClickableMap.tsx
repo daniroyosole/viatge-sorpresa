@@ -48,14 +48,12 @@ const ClickableMap: React.FC<ClickableMapProps> = ({
 }) => {
   const [mapKey, setMapKey] = useState(0);
   const [locationInfo, setLocationInfo] = useState<LocationInfo | null>(null);
-  const [hasUserSelected, setHasUserSelected] = useState(false);
 
   // Set default location to Barcelona if no location is selected
   useEffect(() => {
     if (!selectedLocation) {
       const barcelonaLocation = { lat: 41.3851, lng: 2.1734 };
       onLocationSelect(barcelonaLocation);
-      setHasUserSelected(false);
       onUserSelectionChange?.(false);
     }
   }, [selectedLocation, onLocationSelect, onUserSelectionChange]);
@@ -120,7 +118,6 @@ const ClickableMap: React.FC<ClickableMapProps> = ({
           <MapClickHandler 
             onLocationSelect={onLocationSelect} 
             onUserClick={() => {
-              setHasUserSelected(true);
               onUserSelectionChange?.(true);
             }}
           />

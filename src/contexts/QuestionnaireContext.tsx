@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 interface QuestionnaireData {
   selectedUser: string;
@@ -31,7 +31,7 @@ export const useQuestionnaire = () => {
 };
 
 interface QuestionnaireProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const QuestionnaireProvider: React.FC<QuestionnaireProviderProps> = ({ children }) => {
