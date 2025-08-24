@@ -4,6 +4,7 @@ import UserSelection from './pages/UserSelection';
 import Location1 from './pages/Location1';
 import Location2 from './pages/Location2';
 import Notes from './pages/Notes';
+import Results from './pages/Results';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/location-1" element={<Location1 />} />
             <Route path="/location-2" element={<Location2 />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/resultets" element={<Results />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
