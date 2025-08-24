@@ -17,7 +17,7 @@ function App() {
             <Route path="/location-1" element={<Location1 />} />
             <Route path="/location-2" element={<Location2 />} />
             <Route path="/notes" element={<Notes />} />
-            <Route path="/resultets" element={<Results />} />
+            <Route path="/results" element={<Results />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
